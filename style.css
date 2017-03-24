@@ -1,22 +1,47 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900);
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 
 *::-webkit-scrollbar {
 	display: none;
 }
 
 html {
-	background: #262626;
-	font-family: "Work Sans", sans-serif;
+	background: #0707ec;
+	background-image: url('https://maartenberg.nl/bsod.png');
+	font-family: "Pacifico", cursive;
 	max-height: 100%;
 }
 body {
 	margin: 0;
 }
 
+@keyframes spin {
+	0% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(359deg)
+	}
+}
+
+@keyframes fata {
+	0% {
+		transform: rotate(-15deg) translateX(-150px)
+	}
+	50% {
+		transform: rotate(15deg) translateX(150px)
+	}
+	100% {
+		transform: rotate(-15deg) translateX(-150px)
+	}
+}
+
 .poster {
   display: inline;
   float: right;
   height: 100vh;
+  animation: fata 5s steps(300) infinite;
 }
 
 .cont {
@@ -31,6 +56,7 @@ body {
 }
 .logo img {
 	max-width: 250px;
+	animation: spin 15s steps(300) infinite;
 }
 .activities {
 	margin-left: 50px;
@@ -44,7 +70,9 @@ body {
 
 .activity {
 	padding: 40px;
+	background: black;
 	max-width: 90%;
+	transform: rotate(-45deg);
 	transition: background .5s;
 }
 .activity h1 {
@@ -58,5 +86,24 @@ body {
 	font-size: 1.4em
 }
 .activity.active {
-	background: #161616;
+	background: white;
+	transform: rotate(15deg);
+}
+li.activity.active {
+	position: relative;
+	z-index: 999;
+}
+.activity h1 {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.activity time {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
